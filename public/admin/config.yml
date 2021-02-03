@@ -166,6 +166,7 @@ collections:
         widget: "markdown"
       - label: "Question DE"
         name: "question_de"
+        required: false,
         widget: "markdown"
       - label: "Solutions"
         name: "solutions"
@@ -173,5 +174,5 @@ collections:
         widget: "list"
         fields:
           - {label: "Solution", name: "solution", widget: "string", default: "Possible Solution"}
-          - {label: "IsCorrect", name: "is_correct", widget: "boolean"}
-          - {label: "Alternative Spellings", name: "alt_spellings", widget: "string"}
+          - {label: "IsCorrect", name: "is_correct", widget: "boolean", required: false}
+          - {label: "Alternative Spellings", name: "alt_spellings", widget: "string", required: false}
