@@ -139,3 +139,39 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
+  - name: "questions"
+    label: "Questions"
+    folder: "src/pages/questions"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Department"
+        name: "department"
+        widget: "select"
+        options: ["Consulting", "Engineering", "Holding", "Software"]
+      - label: "Question Type"
+        name: "type"
+        widget: "select"
+        options: ["text", "drag", "multi", "tap", "dragOne"]
+      - label: "Question"
+        name: "question"
+        widget: "markdown"
+      - label: "Question DE"
+        name: "question_de"
+        widget: "markdown"
+      - label: "Solutions"
+        name: "solutions"
+        collapsed: false
+        widget: "list"
+        fields:
+          - {label: "Solution", name: "solution", widget: "string", default: "Possible Solution"}
+          - {label: "IsCorrect", name: "is_correct", widget: "boolean"}
+          - {label: "Alternative Spellings", name: "alt_spellings", widget: "string"}
