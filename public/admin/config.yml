@@ -148,8 +148,14 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: slug
-    summary: "{{title}}"
+    summary: "{{department}} - {{name}} - {{type}}"
     fields:
+      - label: Slug
+        widget: string
+        name: slug
+        required: true
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
+        hint: The question URL
       - label: "Name"
         name: "name"
         widget: "string"
@@ -173,6 +179,6 @@ collections:
         collapsed: false
         widget: "list"
         fields:
-          - {label: "Solution", name: "solution", widget: "string", default: "Possible Solution"}
+          - {label: "Solution", name: "solution", widget: "string"}
           - {label: "Alternative Spellings", name: "alt_spellings", required: false, hint: "comma separated list of other spellings", widget: "string"}
           - {label: "IsCorrect", name: "is_correct", widget: "boolean", required: false}
